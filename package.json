@@ -1,0 +1,26 @@
+{
+  "name": "qron",
+  "version": "0.1.0",
+  "description": "A quartz cron TypesScript implementation.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Tibi Munteanu",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "cronstrue": "^3.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
