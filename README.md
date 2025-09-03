@@ -26,9 +26,10 @@ const nextDate = getNextCronDate(cron, from);
 
 const start = new Date();
 const end = addMonths(new Date(), 2);
+const hasDates = hasDatesBetween(cron, start, end);
 const dates = getCronDatesBetween(cron, start, end);
 
 const formatted = formatCron(cron);
 
-console.log(formatted, nextDate, dates);
+console.log(formatted, nextDate, hasDates, dates);
 ```

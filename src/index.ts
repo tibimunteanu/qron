@@ -923,6 +923,11 @@ export function getCronDatesBetween(
   return results;
 }
 
+export function hasDatesBetween(cron: string, start: Date, end: Date) {
+  const nextDate = getNextCronDate(cron, start);
+  return nextDate && isBefore(nextDate, end);
+}
+
 // format
 export function formatCron(cronExpression: string, locale?: string | null) {
   const result = cronstrue.toString(cronExpression, {
