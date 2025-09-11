@@ -1,22 +1,22 @@
 import cronstrue from "cronstrue";
 import {
-  lastDayOfMonth,
-  isWeekend,
   addDays,
-  subDays,
-  getDay,
-  startOfMonth,
-  getDaysInMonth,
-  isSaturday,
-  isSunday,
-  previousFriday,
-  getDate,
-  nextMonday,
+  addSeconds,
   addYears,
+  getDate,
+  getDay,
+  getDaysInMonth,
   isAfter,
   isBefore,
-  addSeconds,
   isSameDay,
+  isSaturday,
+  isSunday,
+  isWeekend,
+  lastDayOfMonth,
+  nextMonday,
+  previousFriday,
+  startOfMonth,
+  subDays,
 } from "date-fns";
 
 const monthAliases = {
@@ -929,19 +929,4 @@ export function hasDatesBetween(cron: string, start: Date, end: Date) {
 }
 
 // format
-export function formatCron(cronExpression: string, locale?: string | null) {
-  const result = cronstrue.toString(cronExpression, {
-    throwExceptionOnParseError: false,
-    locale,
-  });
-
-  if (
-    result.search("undefined") === -1 &&
-    cronExpression &&
-    cronExpression.length
-  ) {
-    return result;
-  }
-
-  return "-";
-}
+export const formatCron = cronstrue.toString;
